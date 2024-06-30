@@ -14,7 +14,7 @@ const router = createRouter({
     },
     {
       path: '/destination',
-      name: 'destination',
+      name:  'destination',
       component: DestinationView
     },
     {
