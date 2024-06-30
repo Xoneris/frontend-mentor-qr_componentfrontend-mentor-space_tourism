@@ -2,7 +2,7 @@
     import * as data from '../assets/data.json';
     import { ref } from 'vue';
 
-    let crewMember = ref(0);
+    const crewMember = ref(0);
 
     function changeCrewMember (number:number) {
         crewMember.value = number
@@ -25,16 +25,28 @@
 
             <div class="crew-nav">
               <ul>
-                <li @click="changeCrewMember(0)">
+                <li 
+                  @click="changeCrewMember(0)" 
+                  :id="crewMember === 0 ? 'active' : ''"
+                >
                   <div class="pagination-icon"></div>
                 </li>
-                <li @click="changeCrewMember(1)">
+                <li 
+                  @click="changeCrewMember(1)"
+                  :id="crewMember === 1 ? 'active' : ''"
+                >
                   <div class="pagination-icon"></div>
                 </li>
-                <li @click="changeCrewMember(2)">
+                <li 
+                  @click="changeCrewMember(2)"
+                  :id="crewMember === 2 ? 'active' : ''"
+                >
                   <div class="pagination-icon"></div>
                 </li>
-                <li @click="changeCrewMember(3)">
+                <li 
+                  @click="changeCrewMember(3)"
+                  :id="crewMember === 3 ? 'active' : ''"
+                >
                   <div class="pagination-icon"></div>
                 </li>
               </ul>

@@ -387,6 +387,7 @@ main {
 
                     li {
                         list-style: none;
+                        opacity: 0.17;
                     }
 
                     .pagination-icon {
@@ -395,13 +396,113 @@ main {
                         height: 15px;
                         border-radius: 999px;
                         background-color: white;
-                        opacity: 0.17;
+                        
+                    }
+
+                    #active {
+                        opacity: 1;
                     }
                 }
             }
 
             .crew-image {
                 width: 539px;
+                height: 734px;              
+
+                img {
+                    mask-image: linear-gradient(to bottom, black 80%, transparent); 
+                }
+            }  
+        }
+    }
+}
+
+.technology {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 136px);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 48px 0;
+    
+    .wrapper {
+        width: 1275px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 165px;
+        
+
+        b {
+            font-weight: 600;
+            opacity: 0.25;
+        }
+
+        .technology-container {
+            display: flex;
+            align-items: center;
+            height: 734px;
+            gap: 32px;
+
+            .technology-container-left {
+                display: flex;
+                height: 304px;
+                gap: 64px;
+                
+
+                .technology-nav {
+                    display: flex;
+                    align-items: center;
+                    width: 80px;
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 32px;
+
+                    }
+
+                    li {
+                        list-style: none;
+
+                        .nav-element {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $dark-navy;
+                            width: 80px;
+                            height: 80px;
+                            border: 1px solid rgb(255 255 255 / 0.25);;
+                            color: white;
+                            border-radius: 999px;
+                        }
+
+                        .nav-element-active {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $dark-navy;
+                            width: 80px;
+                            height: 80px;
+                            background-color: white;
+                            border-radius: 999px;
+                        }
+                    }
+                }
+
+                .technology-description {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 491px;
+                }
+            }
+
+            .technology-image {
+                display: flex;
+                align-items: center;
+                width: 608px;
                 height: 734px;
 
                 img {
@@ -410,8 +511,7 @@ main {
                     object-fit: contain;
                 }
             }
+            
         }
-
-        
     }
 }

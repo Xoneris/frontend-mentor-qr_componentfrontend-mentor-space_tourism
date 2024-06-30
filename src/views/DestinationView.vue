@@ -2,7 +2,7 @@
     import * as data from '../assets/data.json';
     import { ref } from 'vue';
 
-    let planet = ref(0);
+    const planet = ref(0);
 
     function changePlanet (number:number) {
         planet.value = number
