@@ -70,6 +70,8 @@ html {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 100;
+    color: $light-blue;
 }
 
 .nav-text {
@@ -87,6 +89,7 @@ html {
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 #home {
@@ -116,6 +119,10 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .mobile-nav-container {
+            display: none;
+        }
     }
 
     .header-line {
@@ -166,8 +173,6 @@ header {
                 box-sizing: border-box;
                 transition: all 1s;
 
-                
-
                 b {
                     padding-right: 12px;
                 }
@@ -176,13 +181,13 @@ header {
             li:hover {
                 border-bottom : 3px solid white;
             }
+
+            .active {
+                border-bottom : 3px solid white;
+            }
         }
     }
 }
-
-.active {
-    border-bottom : 3px solid white;
-  }
 
 main {
     min-width: 100%;
@@ -196,6 +201,7 @@ main {
     justify-content: center;
     align-items: center;
     color: white;
+    animation: fadeIn 0.3s linear;
 
     .hero {
         width: 1110px;
@@ -252,6 +258,7 @@ main {
     align-items: center;
     color: white;
     padding: 48px 0;
+    animation: fadeIn 0.3s linear;
 
     .wrapper {
         width: 1110px;
@@ -325,7 +332,10 @@ main {
                     display: flex;
 
                     div {
+                        display: flex;
                         width: 50%;
+                        flex-direction: column;
+                        gap: 12px;
                     }
                 }
             }
@@ -341,6 +351,7 @@ main {
     align-items: center;
     color: white;
     padding: 48px 0;
+    animation: fadeIn 0.3s linear;
     
     .wrapper {
         width: 1110px;
@@ -425,6 +436,12 @@ main {
     align-items: center;
     color: white;
     padding: 48px 0;
+    animation: fadeIn 0.3s linear;
+
+    @keyframes fadeIn {
+        from {opacity: 0}
+        to {opacity: 1;}
+    }
     
     .wrapper {
         width: 1275px;
@@ -473,9 +490,14 @@ main {
                             color: $dark-navy;
                             width: 80px;
                             height: 80px;
-                            border: 1px solid rgb(255 255 255 / 0.25);;
+                            border: 1px solid rgb(255 255 255 / 0.25);
                             color: white;
                             border-radius: 999px;
+                            transition: all 0.5s;
+                        }
+
+                        .nav-element:hover {
+                            border: 1px solid rgb(255 255 255 / 1);
                         }
 
                         .nav-element-active {
@@ -487,6 +509,7 @@ main {
                             height: 80px;
                             background-color: white;
                             border-radius: 999px;
+                            transition: all 0.5s;
                         }
                     }
                 }
@@ -512,6 +535,423 @@ main {
                 }
             }
             
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .heading-l {
+        font-size: 80px;
+    }
+
+    .heading-m {
+        font-size: 40px;
+    }
+
+    .heading-s {
+        font-size: 24px;
+    }
+
+    .heading-xs {
+        font-size: 20px;
+    }
+
+    
+
+    .text {
+        font-size: 16px;
+    }
+
+    #home {
+        background-image: url('../assets/home/background-home-tablet.jpg');
+    }
+    
+    #destination {
+        background-image: url('../assets/destination/background-destination-tablet.jpg');
+    }
+    
+    #crew {
+        background-image: url('../assets/crew/background-crew-tablet.jpg');
+    }
+    
+    #technology {
+        background-image: url('../assets/technology/background-technology-tablet.jpg');
+    }
+    
+    header {
+        height: 96px;
+
+        img {
+            flex-grow: 1;
+            padding: 0 40px;
+            margin: auto;
+        }
+
+        .header-line {
+            display: none;
+        }
+
+        nav {
+            width: 640px;
+            background-color: rgb(255, 255, 255, 0.05);
+    
+
+            ul {
+                padding-right: 40px;
+            }
+        }
+    }
+
+    .home {
+        margin-top: 128px;
+        height: 672px;
+
+        .hero {
+            height: 100%;
+
+            .hero-wrapper {
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+
+                .text-wrapper {
+                    align-items: center;
+                    width: 512px;
+                    height: 334px;
+                    text-align: center;
+                }
+
+                a {
+                    display: contents;
+                }
+
+                .call-to-action {
+                    height: 272px;
+                }
+            }
+        }
+    }
+
+    .destination {
+        padding: 40px 0;
+
+        .wrapper {
+            margin: 40px;
+
+            .planet-container {
+                flex-direction: column;
+                margin-top: 24px;
+                padding: 42px 0;
+
+
+                .planet-image {
+                    margin: 0px;
+
+                    img {
+                        width: 300px;
+                    }
+                }
+                .planet-information {
+                    height: 361px;
+                    align-items: center;
+                    margin-top: 32px;
+                    padding: 0;
+                    text-align: center;
+
+                    hr {
+                        width: 100%;
+                    }
+
+                    .planet-statistics {
+
+                        width: 100%;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .crew {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        .wrapper {
+            width: 100%;
+            padding: 40px;
+            border: 1px solid red;
+
+            .crew-container-all {
+                display: flex;
+                flex-direction: column;
+                
+                text-align: center;
+                border: 1px solid orange;
+
+                .crew-container-left {
+                    width: calc(100% - 176px);
+                    height: 305px;
+                    margin: 64px 88px 0 88px;
+                    align-items: center;
+                    border: 1px solid yellow;
+
+                    .crew-description {
+                        width: 100%;
+                        margin: 0;
+                    }
+
+                    .crew-nav {
+
+                        ul {
+                            justify-content: center;
+                            gap: 12px;
+                        }
+
+                        .pagination-icon {
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                }
+                .crew-image {
+                    
+                    height: 100%;
+                    width: 300px;
+                    border: 1px solid violet;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px){
+
+    .heading-xl {
+        font-size: 80px;
+    }
+
+    .heading-l {
+        font-size: 56px;
+    }
+
+    .heading-xs {
+        font-size: 16px;
+    }
+
+    .heading-s {
+        font-size: 18px;
+    }
+
+    #home {
+        background-image: url('../assets/home/background-home-mobile.jpg');
+    }
+
+    #destination {
+        background-image: url('../assets/destination/background-destination-mobile.jpg');
+    }
+
+    #crew {
+        background-image: url('../assets/crew/background-crew-mobile.jpg');
+    }
+
+    #technology {
+        background-image: url('../assets/technology/background-technology-mobile.jpg');
+    }
+    
+    header {
+        height: 88px;
+        align-items: center;
+
+        .header-wrapper {
+            justify-content: space-between;
+            padding: 0 24px;
+
+            .mobile-nav-container {
+                display: block;
+            }
+
+            img {
+                flex-grow: 1;
+                margin: auto;
+                padding: 0;
+            }
+    
+            nav {
+                display: none;
+            } 
+
+            .mobile-nav {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 254px;
+                height: 100%;
+                padding-left: 32px;
+                backdrop-filter: blur(80px);
+                font-family: "Barlow Condensed", sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                font-style: normal;
+                letter-spacing: 2.7px;
+                z-index: 10;
+
+                .mobile-nav-close {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    height: 85px;
+
+                    img {
+                        max-width: 24px;
+                        display: flex;
+                        margin-right: 24px;
+                    }
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 32px;
+                    height: 222px;
+                
+                    a {
+                        display: contents;
+                    }
+
+                    li {
+                        display: flex;
+                        list-style: none;
+                        border-right : 3px solid transparent;
+                        color: white;
+                        text-decoration: none;
+                        box-sizing: border-box;
+                        transition: all 1s;
+        
+                        b {
+                            padding-right: 12px;
+                        }
+                    }
+        
+                    li:hover {
+                        border-right : 3px solid white;
+                    }
+        
+                    .active {
+                        border-right : 3px solid white;
+                    }
+                }
+            }
+
+            #open {
+                margin-right: 0;
+                transition: all 0.7s;
+            }
+
+            #closed {
+                margin-right: -254px;
+                transition: all 0.7s;
+            }
+        }      
+    }
+
+    .home {
+        width: calc(100% - 48px);
+        margin: 24px;
+
+        .hero {
+            width: 327px;
+            
+            .hero-wrapper {
+                width: 100%;
+
+                .text-wrapper {
+                    width: 100%;
+                    height: 294px;
+                }
+
+                a {
+                    display: contents;
+                }
+
+                .call-to-action {
+                    width:  144px;
+                    height: 144px;
+                    margin-bottom: calc(50% - 72px);
+                }
+            }
+        }
+    }
+
+    .destination {
+        padding: 24px 0;
+        text-align: center;
+
+        .wrapper {
+            width: 100%;
+            margin: 24px;
+
+            .planet-container {
+                flex-direction: column;
+                margin-top: 24px;
+                padding: 42px 0;
+
+
+                .planet-image {
+                    width: 100%;
+                    margin: 0px;
+
+                    img {
+                        width: 150px;
+                    }
+                }
+                .planet-information {
+                    height: 466px;
+                    width: 100%;
+                    align-items: center;
+                    margin-top: 32px;
+                    padding: 0;
+                    text-align: center;
+
+                    hr {
+                        width: 100%;
+                    }
+
+                    .planet-statistics {
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 24px;
+                        width: 100%;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .crew {
+        .wrapper {
+            .crew-container-all {
+                .crew-container-left {
+                    .crew-description {
+
+                    }
+
+                    .crew-nav {
+
+                    }
+                }
+                .crew-image {
+                    
+                }
+            }
         }
     }
 }

@@ -21,6 +21,7 @@
                         <ul>
                             <li
                                 @click="changetechnology(0)"
+                                @scroll="changetechnology(0+1)"
                             >
                                 <div :class="technology === 0 ? 'nav-element-active' : 'nav-element'">
                                     <p class="heading-s">1</p>

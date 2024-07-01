@@ -67,6 +67,8 @@ html {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-weight: 100;
+  color: #D0D6F9;
 }
 
 .nav-text {
@@ -113,6 +115,9 @@ header .header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+header .header-wrapper .mobile-nav-container {
+  display: none;
 }
 header .header-line {
   flex-grow: 1;
@@ -163,8 +168,7 @@ header nav ul li b {
 header nav ul li:hover {
   border-bottom: 3px solid white;
 }
-
-.active {
+header nav ul .active {
   border-bottom: 3px solid white;
 }
 
@@ -180,6 +184,7 @@ main {
   justify-content: center;
   align-items: center;
   color: white;
+  animation: fadeIn 0.3s linear;
 }
 .home .hero {
   width: 1110px;
@@ -227,6 +232,7 @@ main {
   align-items: center;
   color: white;
   padding: 48px 0;
+  animation: fadeIn 0.3s linear;
 }
 .destination .wrapper {
   width: 1110px;
@@ -290,7 +296,10 @@ main {
   display: flex;
 }
 .destination .wrapper .planet-container .planet-information .planet-statistics div {
+  display: flex;
   width: 50%;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .crew {
@@ -301,6 +310,7 @@ main {
   align-items: center;
   color: white;
   padding: 48px 0;
+  animation: fadeIn 0.3s linear;
 }
 .crew .wrapper {
   width: 1110px;
@@ -373,6 +383,15 @@ main {
   align-items: center;
   color: white;
   padding: 48px 0;
+  animation: fadeIn 0.3s linear;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .technology .wrapper {
   width: 1275px;
@@ -419,6 +438,10 @@ main {
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
   border-radius: 999px;
+  transition: all 0.5s;
+}
+.technology .wrapper .technology-container .technology-container-left .technology-nav li .nav-element:hover {
+  border: 1px solid rgb(255, 255, 255);
 }
 .technology .wrapper .technology-container .technology-container-left .technology-nav li .nav-element-active {
   display: flex;
@@ -429,6 +452,7 @@ main {
   height: 80px;
   background-color: white;
   border-radius: 999px;
+  transition: all 0.5s;
 }
 .technology .wrapper .technology-container .technology-container-left .technology-description {
   display: flex;
@@ -447,4 +471,316 @@ main {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .heading-l {
+    font-size: 80px;
+  }
+  .heading-m {
+    font-size: 40px;
+  }
+  .heading-s {
+    font-size: 24px;
+  }
+  .heading-xs {
+    font-size: 20px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  #home {
+    background-image: url("../assets/home/background-home-tablet.jpg");
+  }
+  #destination {
+    background-image: url("../assets/destination/background-destination-tablet.jpg");
+  }
+  #crew {
+    background-image: url("../assets/crew/background-crew-tablet.jpg");
+  }
+  #technology {
+    background-image: url("../assets/technology/background-technology-tablet.jpg");
+  }
+  header {
+    height: 96px;
+  }
+  header img {
+    flex-grow: 1;
+    padding: 0 40px;
+    margin: auto;
+  }
+  header .header-line {
+    display: none;
+  }
+  header nav {
+    width: 640px;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  header nav ul {
+    padding-right: 40px;
+  }
+  .home {
+    margin-top: 128px;
+    height: 672px;
+  }
+  .home .hero {
+    height: 100%;
+  }
+  .home .hero .hero-wrapper {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .home .hero .hero-wrapper .text-wrapper {
+    align-items: center;
+    width: 512px;
+    height: 334px;
+    text-align: center;
+  }
+  .home .hero .hero-wrapper a {
+    display: contents;
+  }
+  .home .hero .hero-wrapper .call-to-action {
+    height: 272px;
+  }
+  .destination {
+    padding: 40px 0;
+  }
+  .destination .wrapper {
+    margin: 40px;
+  }
+  .destination .wrapper .planet-container {
+    flex-direction: column;
+    margin-top: 24px;
+    padding: 42px 0;
+  }
+  .destination .wrapper .planet-container .planet-image {
+    margin: 0px;
+  }
+  .destination .wrapper .planet-container .planet-image img {
+    width: 300px;
+  }
+  .destination .wrapper .planet-container .planet-information {
+    height: 361px;
+    align-items: center;
+    margin-top: 32px;
+    padding: 0;
+    text-align: center;
+  }
+  .destination .wrapper .planet-container .planet-information hr {
+    width: 100%;
+  }
+  .destination .wrapper .planet-container .planet-information .planet-statistics {
+    width: 100%;
+  }
+  .crew {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  .crew .wrapper {
+    width: 100%;
+    padding: 40px;
+    border: 1px solid red;
+  }
+  .crew .wrapper .crew-container-all {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid orange;
+  }
+  .crew .wrapper .crew-container-all .crew-container-left {
+    width: calc(100% - 176px);
+    height: 305px;
+    margin: 64px 88px 0 88px;
+    align-items: center;
+    border: 1px solid yellow;
+  }
+  .crew .wrapper .crew-container-all .crew-container-left .crew-description {
+    width: 100%;
+    margin: 0;
+  }
+  .crew .wrapper .crew-container-all .crew-container-left .crew-nav ul {
+    justify-content: center;
+    gap: 12px;
+  }
+  .crew .wrapper .crew-container-all .crew-container-left .crew-nav .pagination-icon {
+    width: 10px;
+    height: 10px;
+  }
+  .crew .wrapper .crew-container-all .crew-image {
+    height: 100%;
+    width: 300px;
+    border: 1px solid violet;
+  }
+  .crew .wrapper .crew-container-all .crew-image img {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 375px) {
+  .heading-xl {
+    font-size: 80px;
+  }
+  .heading-l {
+    font-size: 56px;
+  }
+  .heading-xs {
+    font-size: 16px;
+  }
+  .heading-s {
+    font-size: 18px;
+  }
+  #home {
+    background-image: url("../assets/home/background-home-mobile.jpg");
+  }
+  #destination {
+    background-image: url("../assets/destination/background-destination-mobile.jpg");
+  }
+  #crew {
+    background-image: url("../assets/crew/background-crew-mobile.jpg");
+  }
+  #technology {
+    background-image: url("../assets/technology/background-technology-mobile.jpg");
+  }
+  header {
+    height: 88px;
+    align-items: center;
+  }
+  header .header-wrapper {
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+  header .header-wrapper .mobile-nav-container {
+    display: block;
+  }
+  header .header-wrapper img {
+    flex-grow: 1;
+    margin: auto;
+    padding: 0;
+  }
+  header .header-wrapper nav {
+    display: none;
+  }
+  header .header-wrapper .mobile-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 254px;
+    height: 100%;
+    padding-left: 32px;
+    -webkit-backdrop-filter: blur(80px);
+            backdrop-filter: blur(80px);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 2.7px;
+    z-index: 10;
+  }
+  header .header-wrapper .mobile-nav .mobile-nav-close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+  }
+  header .header-wrapper .mobile-nav .mobile-nav-close img {
+    max-width: 24px;
+    display: flex;
+    margin-right: 24px;
+  }
+  header .header-wrapper .mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: 222px;
+  }
+  header .header-wrapper .mobile-nav ul a {
+    display: contents;
+  }
+  header .header-wrapper .mobile-nav ul li {
+    display: flex;
+    list-style: none;
+    border-right: 3px solid transparent;
+    color: white;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 1s;
+  }
+  header .header-wrapper .mobile-nav ul li b {
+    padding-right: 12px;
+  }
+  header .header-wrapper .mobile-nav ul li:hover {
+    border-right: 3px solid white;
+  }
+  header .header-wrapper .mobile-nav ul .active {
+    border-right: 3px solid white;
+  }
+  header .header-wrapper #open {
+    margin-right: 0;
+    transition: all 0.7s;
+  }
+  header .header-wrapper #closed {
+    margin-right: -254px;
+    transition: all 0.7s;
+  }
+  .home {
+    width: calc(100% - 48px);
+    margin: 24px;
+  }
+  .home .hero {
+    width: 327px;
+  }
+  .home .hero .hero-wrapper {
+    width: 100%;
+  }
+  .home .hero .hero-wrapper .text-wrapper {
+    width: 100%;
+    height: 294px;
+  }
+  .home .hero .hero-wrapper a {
+    display: contents;
+  }
+  .home .hero .hero-wrapper .call-to-action {
+    width: 144px;
+    height: 144px;
+    margin-bottom: calc(50% - 72px);
+  }
+  .destination {
+    padding: 24px 0;
+    text-align: center;
+  }
+  .destination .wrapper {
+    width: 100%;
+    margin: 24px;
+  }
+  .destination .wrapper .planet-container {
+    flex-direction: column;
+    margin-top: 24px;
+    padding: 42px 0;
+  }
+  .destination .wrapper .planet-container .planet-image {
+    width: 100%;
+    margin: 0px;
+  }
+  .destination .wrapper .planet-container .planet-image img {
+    width: 150px;
+  }
+  .destination .wrapper .planet-container .planet-information {
+    height: 466px;
+    width: 100%;
+    align-items: center;
+    margin-top: 32px;
+    padding: 0;
+    text-align: center;
+  }
+  .destination .wrapper .planet-container .planet-information hr {
+    width: 100%;
+  }
+  .destination .wrapper .planet-container .planet-information .planet-statistics {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+  }
 }/*# sourceMappingURL=main.css.map */
