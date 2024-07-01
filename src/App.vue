@@ -6,7 +6,7 @@ import { ref, watch } from 'vue';
   const isMobileNavOpen = ref(false)
   const route = useRoute()
 
-  function updateBackgroundImage(path:string) {
+  function updateBackgroundImage(path:any) {
     idForBG.value = path
   }
 
@@ -47,11 +47,11 @@ import { ref, watch } from 'vue';
 
         <div class="mobile-nav-container">
           <div class="mobile-burger-menu" @click="openMobileNav(!isMobileNavOpen)">
-            <img src="../assets/shared/icon-hamburger.svg" alt="hamburger-icon"/>
+            <img src="./assets/shared/icon-hamburger.svg" alt="hamburger-icon"/>
           </div>
           <div class="mobile-nav" :id="isMobileNavOpen ? 'open' : 'closed'">
             <div class="mobile-nav-close">
-              <img src="../assets/shared/icon-close.svg" alt="hamburger-close-icon" @click="openMobileNav(!isMobileNavOpen)"/>
+              <img src="./assets/shared/icon-close.svg" alt="hamburger-close-icon" @click="openMobileNav(!isMobileNavOpen)"/>
             </div>
             <ul>
               <RouterLink to="/">
