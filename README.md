@@ -1,6 +1,6 @@
 # Frontend Mentor - Space Tourism Multipage
 
-This is a solution to the [Space Tourism Multipage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Space Tourism Multipage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 - Live Site URL: [Space Tourism Multipage](https://fmspace-tourism-xoneris-projects.vercel.app)
 
