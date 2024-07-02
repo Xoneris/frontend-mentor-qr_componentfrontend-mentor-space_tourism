@@ -7,9 +7,9 @@ $light-blue: #D0D6F9;
     box-sizing: border-box;
 }
 
-html {
+html, body {
     min-height: 100vh;
-    min-width: 100vw;
+    min-width: 100vw; 
 }
 
 .text {
@@ -85,11 +85,17 @@ html {
 
 .background-image {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    z-index: -1;
+}
+
+main {
+    z-index: 5;
 }
 
 #home {
@@ -113,6 +119,7 @@ header {
     height: 136px;
     display: flex;
     align-items: flex-end;
+    z-index: 1;
 
     .header-wrapper {
         width: 100%;
@@ -136,7 +143,7 @@ header {
 
     img {
         padding: 0 64px;
-        
+        z-index: 1;
 
     }
 
@@ -187,11 +194,6 @@ header {
             }
         }
     }
-}
-
-main {
-    min-width: 100%;
-    min-height: 100%;
 }
 
 .home {
@@ -605,7 +607,6 @@ main {
 
     .home {
         margin-top: 128px;
-        height: 672px;
 
         .hero {
             height: 100%;
@@ -677,25 +678,25 @@ main {
         padding: 0;
         margin: 0;
         width: 100%;
+        height: calc(100vh - 96px);
 
         .wrapper {
             width: 100%;
-            padding: 40px;
-            border: 1px solid red;
+            padding: 40px 40px 0 40px;
+            margin: 0;
 
             .crew-container-all {
+                height: 100%;
                 display: flex;
                 flex-direction: column;
-                
+                justify-content: space-between;
                 text-align: center;
-                border: 1px solid orange;
 
                 .crew-container-left {
                     width: calc(100% - 176px);
                     height: 305px;
                     margin: 64px 88px 0 88px;
                     align-items: center;
-                    border: 1px solid yellow;
 
                     .crew-description {
                         width: 100%;
@@ -716,15 +717,14 @@ main {
                     }
                 }
                 .crew-image {
-                    
                     height: 100%;
-                    width: 300px;
-                    border: 1px solid violet;
+                    width: 400px;
 
                     img {
                         height: 100%;
                         width: 100%;
-                        
+                        object-fit: cover;
+                        mask-image: none;
                     }
                 }
             }
@@ -789,7 +789,7 @@ main {
             } 
 
             .mobile-nav {
-                position: absolute;
+                position: fixed;
                 top: 0;
                 right: 0;
                 width: 254px;
@@ -858,6 +858,7 @@ main {
             #closed {
                 margin-right: -254px;
                 transition: all 0.7s;
+                // opacity: 0;
             }
         }      
     }

@@ -21,7 +21,7 @@ import { ref, watch } from 'vue';
 </script>
 
 <template>
-  <div class="background-image" :id="idForBG">
+  
     <header>
       <div class="header-wrapper">
         <RouterLink to="/">
@@ -75,5 +75,5 @@ import { ref, watch } from 'vue';
     <main>
       <RouterView />
     </main>
-  </div>
+    <div class="background-image" :id="idForBG"></div>
 </template>
