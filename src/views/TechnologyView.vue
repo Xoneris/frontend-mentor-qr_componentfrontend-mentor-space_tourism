@@ -1,5 +1,6 @@
 <script setup lang="ts">
     import * as data from '../assets/data.json';
+    import { useWindowSize } from '@vueuse/core'
     import { ref } from 'vue';
 
     const technology = ref(0);
@@ -7,7 +8,11 @@
     function changetechnology (number:number) {
         technology.value = number
     }
+
+    const { width } = useWindowSize()
+
 </script>
+
 
 <template>
     <section class="technology">
@@ -21,7 +26,6 @@
                         <ul>
                             <li
                                 @click="changetechnology(0)"
-                                @scroll="changetechnology(0+1)"
                             >
                                 <div :class="technology === 0 ? 'nav-element-active' : 'nav-element'">
                                     <p class="heading-s">1</p>
@@ -52,7 +56,13 @@
 
                 <div class="technology-image">
                     <img
+                        v-if="width >= 768"
                         :src="data.technology[technology].images.portrait"
+                        :alt="data.technology[technology].name"
+                    />
+                    <img
+                        v-else
+                        :src="data.technology[technology].images.landscape"
                         :alt="data.technology[technology].name"
                     />
                 </div>
