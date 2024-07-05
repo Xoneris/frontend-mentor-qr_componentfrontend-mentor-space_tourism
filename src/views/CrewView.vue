@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import * as data from '../assets/data.json';
-    import { ref } from 'vue';
+    import { ref, onMounted, onUnmounted, Transition } from 'vue';
 
     const crewMember = ref(0);
 
@@ -8,13 +8,26 @@
         crewMember.value = number
     }
 
+    const updateCrewMemberId = () => {
+      crewMember.value = (crewMember.value + 1) % 4; 
+    };
+
+    onMounted(() => {
+      const intervalId = setInterval(updateCrewMemberId, 5000); 
+
+      onUnmounted(() => {
+        clearInterval(intervalId);
+      });
+    })
+
 </script>
 
 <template>
     <section class="crew">
       <div class="wrapper">
         <p class="heading-xs"><b>02</b> Meet your crew</p>
-        <div class="crew-container-all">
+        <Transition name="fade" mode="out-in">
+        <div class="crew-container-all" :key="data.crew[crewMember].name">
           <div class="crew-container-left">
 
             <div class="crew-description">
@@ -60,6 +73,7 @@
             />
           </div>
         </div>
+        </Transition>
       </div>
     </section>
 </template>

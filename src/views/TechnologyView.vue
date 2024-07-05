@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import * as data from '../assets/data.json';
     import { useWindowSize } from '@vueuse/core'
-    import { ref } from 'vue';
+    import { ref, Transition } from 'vue';
 
     const technology = ref(0);
 
@@ -18,9 +18,8 @@
     <section class="technology">
         <div class="wrapper">
             <p class="heading-xs"><b>03</b> Space launch 101</p>
-
-            <div class="technology-container">
-
+            <Transition name="fade" mode="out-in">
+            <div class="technology-container" :key="data.technology[technology].name">
                 <div class="technology-container-left">
                     <div class="technology-nav">
                         <ul>
@@ -48,7 +47,7 @@
                         </ul>
                     </div>
                     <div class="technology-description">
-                        <p class="heading-s">The Terminology...</p>
+                        <p class="heading-s" style="opacity: 0.5">The Terminology...</p>
                         <p class="heading-m">{{ data.technology[technology].name }}</p>
                         <p class="text">{{ data.technology[technology].description }}</p>
                     </div>
@@ -66,9 +65,8 @@
                         :alt="data.technology[technology].name"
                     />
                 </div>
-
             </div>
-
+            </Transition>
         </div>
     </section>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import * as data from '../assets/data.json';
-    import { ref } from 'vue';
+    import { ref, Transition } from 'vue';
 
     const planet = ref(0);
 
@@ -14,37 +14,34 @@
     <section class="destination">
         <div class="wrapper">
             <p class="heading-xs"><b>01</b> Pick your Destination</p>
-            <div class="planet-container">
+            <Transition name="fade" mode="out-in">
+            <div class="planet-container" :key="data.destinations[planet].name">
                 <div class="planet-image">
                     <img 
                         :src="data.destinations[planet].images.webp" 
-                        :alt="data.destinations[planet].name" 
+                        :alt="data.destinations[planet].name"
                     />
                 </div>
                 <div class="planet-information">
                     <ul>
                         <li 
                             :class="planet === 0 ? 'nav-text active' : 'nav-text'" 
-                            @click="changePlanet(0)"
-                        >
+                            @click="changePlanet(0)">
                             Moon
                         </li>
                         <li 
                             :class="planet === 1 ? 'nav-text active' : 'nav-text'" 
-                            @click="changePlanet(1)"
-                        >
+                            @click="changePlanet(1)">
                             Mars
                         </li>
                         <li 
                             :class="planet === 2 ? 'nav-text active' : 'nav-text'" 
-                            @click="changePlanet(2)"
-                        >
+                            @click="changePlanet(2)">
                             Europa
                         </li>
                         <li 
                             :class="planet === 3 ? 'nav-text active' : 'nav-text'" 
-                            @click="changePlanet(3)"
-                        >
+                            @click="changePlanet(3)">
                             Titan
                         </li>
                     </ul>
@@ -65,7 +62,7 @@
                     </div>
                 </div>
             </div>
+            </Transition>
         </div>
     </section>
 </template>
-  

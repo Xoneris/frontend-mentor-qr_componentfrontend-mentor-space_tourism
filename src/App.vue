@@ -54,16 +54,16 @@ import { ref, watch } from 'vue';
               <img src="./assets/shared/icon-close.svg" alt="hamburger-close-icon" @click="openMobileNav(!isMobileNavOpen)"/>
             </div>
             <ul>
-              <RouterLink to="/">
+              <RouterLink to="/" @click="openMobileNav(false)">
                 <li :class="idForBG === 'home' ? 'active' : null"><b>00</b> HOME</li>
               </RouterLink>
-              <RouterLink to="/destination">
+              <RouterLink to="/destination" @click="openMobileNav(false)">
                 <li :class="idForBG === 'destination' ? 'active' : null"><b>01</b>DESTINATION</li>
               </RouterLink>
-              <RouterLink to="/crew">
+              <RouterLink to="/crew" @click="openMobileNav(false)">
                 <li :class="idForBG === 'crew' ? 'active' : null"><b>02</b>CREW</li>
               </RouterLink>
-              <RouterLink to="/technology">
+              <RouterLink to="/technology" @click="openMobileNav(false)">
                 <li :class="idForBG === 'technology' ? 'active' : null"><b>03</b>TECHNOLOGY</li>
               </RouterLink>
             </ul>
@@ -72,7 +72,7 @@ import { ref, watch } from 'vue';
         
       </div>
     </header>
-    <main>
+    <main @click="openMobileNav(false)">
       <RouterView />
     </main>
     <div class="background-image" :id="idForBG"></div>
